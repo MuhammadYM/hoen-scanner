@@ -44,6 +44,10 @@ public class HoenScannerApplication extends Application<HoenScannerConfiguration
         List<SearchResult> searchResults = new ArrayList<>();
         searchResults.addAll(carResults);
         searchResults.addAll(hotelResults);
+
+        final SearchResource resource = new SearchResource(searchResults);
+        environment.jersey().register(resource);
+
     }
 
 }
